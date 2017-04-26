@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Odkaz na github: https://github.com/xpavf001/TextovyEditor-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="konfigurace_textoveho_editoru">
+    <xs:complexType>
+      <xs:sequence>
+        <!--obecné nastavení-->
+        <xs:element name="obecne_nastaveni">       
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="jazykova_lokalizace" type="xs:language"/>
+              <xs:element name="motiv" type="design"/>
+              <xs:element name="datum" type="xs:dateTime"/>
+              <xs:element name="znakova_sada" type="charset"/>
+              <xs:element name="autopredikce" type="xs:boolean"/>
+              <xs:element name="uloziste" type="xs:anyURI"/>
+            </xs:sequence>
+          </xs:complexType>              
+        </xs:element>
+        <!--obecné nastavení-->
+
+        <!--nastavení formátu-->
+        <xs:element name="nastaveni_formatu">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="format" type="form"/>
+              <xs:element name="orientace" type="orientation"/>
+            </xs:sequence>
+          </xs:complexType>          
+        </xs:element>
+        <!--nastavení formátu-->
+
+
+        <!--nastavení písma-->
+        <xs:element name="nastaveni_pisma">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="typ_fontu" type="font"/>
+              <xs:element name="velikost_fontu" type="xs:integer" minOccurs="1"/>
+              <xs:element name="barva_textu" type="colour"/>
+              <xs:element name="barva_pozadi_textu" type="colour"/>
+              <xs:element name="rez_fontu" type="style"/>
+              <xs:element name="podtrzeni_textu" type="underline"/>
+              <xs:element name="zarovnani_textu" type="alignment"/>
+              <xs:element name="odsazeni_textu" type="xs:integer" minOccurs="0"/>
+              <xs:element name="radkovani" type="xs:integer" minOccurs="0"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <!--nastavení písma--> 
+
+        <!--volba stylu-->
+        <xs:element name="styl">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="typ_fontu"/>
+              <xs:element ref="velikost_fontu"/>
+              <xs:element ref="barva_textu"/>
+              <xs:element ref="barva_pozadi_textu"/>
+              <xs:element ref="rez_fontu"/>
+              <xs:element ref="podtrzeni_textu"/>
+              <xs:element ref="zarovnani_textu"/>
+              <xs:element ref="odsazeni_textu"/>
+              <xs:element ref="radkovani"/>
+              <xs:attribute name="jmeno_stylu"
+                            type="xs:string"
+                            minOccurs="0"
+                            use="required">
+            </xs:sequence>
+          </xs:complexType> 
+        </xs:element>
+        <!--volba stylu--> 
+
+        <!--nastavení příloh-->
+        <xs:element name="priloha">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="tabulka">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:attribute name="radek" type="xs:integer" minOccurs="0">
+                    <xs:attribute name="sloupec" type="xs:integer" minOccurs="0">
+                    <xs:attribute name="jmeno_tabulky" type="xs:string" use="required">
+                  </xs:sequence>
+                </xs:complexType>            
+              </xs:element>
+              <xs:element name="obrazek">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="cesta" type="xs:anyURI"/>
+                    <xs:attribute name="jmeno_obrazku" type="xs:string" use="required">
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>              
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <!--nastavení příloh--> 
+
+        <!--nastavení ohraničení-->
+        <xs:element name="ohraniceni">       
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="zleva" type="xs:integer" minOccurs="0"/>
+              <xs:element name="zprava" type="xs:integer" minOccurs="0"/>
+              <xs:element name="shora" type="xs:integer" minOccurs="0"/>
+              <xs:element name="zdola" type="xs:integer" minOccurs="0"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <!--nastavení ohraničení-->
+        
+        <!--vlastní ohraničení-->
+        <xs:element name="vlastni_ohraniceni">       
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="zleva"/>
+              <xs:element ref="zprava"/>
+              <xs:element ref="shora"/>
+              <xs:element ref="zdola"/>
+              <xs:attribute name="jmeno_ohraniceni" type="xs:string">
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <!--vlastní ohraničení-->
+
+        <!--číslování stránek-->
+        <xs:element name="cislovani_stranek">
+          <xs:complexType> 
+            <xs:sequence>
+              <xs:element name="stav" type="xs:boolean"/>
+              <xs:element name="pozice" type="position"/>
+            </xs:sequence>            
+          </xs:complexType>
+        </xs:element>
+        <!--číslování stránek-->
+</xs:element>
+
+<!--omezení-->
+  <!--nastavení motivu-->
+  <xs:simpleType name="design">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="svetly_motiv"/>
+      <xs:enumeration value="tmavy_motiv"/>
+      <xs:enumeration value="barevny_motiv"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--nastavení motivu-->
+
+  <!--nastavení znakové sady-->
+  <xs:simpleType name="charset">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="utf-8"/>
+      <xs:enumeration value="windows-1258"/>
+      <xs:enumeration value="utf-7"/>
+      <xs:enumeration value="iso-8859"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--nastavení znakové sady-->
+
+  <!--nastavení formátu-->
+  <xs:simpleType name="form">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="A3"/>
+      <xs:enumeration value="A4"/>
+      <xs:enumeration value="A5"/>
+      <xs:enumeration value="B4"/>
+      <xs:enumeration value="B5"/>
+      <xs:enumeration value="Letter"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--nastavení formátu-->
+
+  <!--nastavení orientace-->
+  <xs:simpleType name="orientation">
+      <xs:restriction base="xs:string">
+         <xs:pattern value="landscape|portrait"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <!--nastavení orientace-->
+
+  <!--nastavení typu fontu-->
+  <xs:simpleType name="font">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Arial"/>
+      <xs:enumeration value="Times New Roman"/>
+      <xs:enumeration value="Calibre"/>
+      <xs:enumeration value="Comic Sans"/>
+      <xs:enumeration value="Helvetica"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--nastavení typu fontu-->
+
+  <!--nastavení barvy-->
+  <xs:simpleType name="colour">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Black"/>
+      <xs:enumeration value="Red"/>
+      <xs:enumeration value="Green"/>
+      <xs:enumeration value="Blue"/>
+      <xs:enumeration value="Yellow"/>
+      <xs:enumeration value="White"/>      
+    </xs:restriction>
+  </xs:simpleType>
+  <!--nastavení barvy-->
+
+  <!--nastavení řezu-->
+  <xs:simpleType name="colour">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Bold"/>
+      <xs:enumeration value="Italic"/>
+      <xs:enumeration value="Normal"/>      
+    </xs:restriction>
+  </xs:simpleType>
+  <!--nastavení řezu-->
+
+  <!--nastavení podtržení-->
+  <xs:simpleType name="underline">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None"/> 
+      <xs:enumeration value="Upper"/>
+      <xs:enumeration value="Lower"/>
+      <xs:enumeration value="Middle"/>   
+    </xs:restriction>
+  </xs:simpleType>
+  <!--nastavení podtržení-->
+
+  <!--nastavení zarovnání-->
+  <xs:simpleType name="alignment">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Left"/>
+      <xs:enumeration value="Right"/>
+      <xs:enumeration value="Center"/>
+      <xs:enumeration value="Bloc"/>    
+    </xs:restriction>
+  </xs:simpleType>
+  <!--nastavení zarovnání--> 
+</xs:schema>

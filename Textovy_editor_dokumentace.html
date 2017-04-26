@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<!-- Odkaz na github: https://github.com/xpavf001/TextovyEditor-->
+<html>
+	<head>
+		<title>Dokumentace k semestrální práci "Textový editor"</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<header>
+			<h1>Dokumentace k semestrální práci "Textový editor"</h1>
+		</header>
+		
+		<nav id="navigace">
+			<h2>Obsah</h2>
+			<ul>
+				<li><a href="#navigace">			Obsah s odkazy</a></li>
+				<li><a href="#uvod">				Úvod</a></li>
+				<li><a href="#metodika">			Metodika</a></li>
+				<li><a href="#elementy_atributy">	Popis elementů a atributů</a></li>
+				<li><a href="#transformace">		Popis transformace</a></li>
+				<li><a href="#shrnuti">				Závěr</a></li>
+				<li><a href="#zapati">				Zápatí</a></li>
+			</ul>
+		</nav>
+		
+		<main> 
+			<article>
+				<section id="uvod">
+					<h2>Úvod</h2>
+					<p>
+						Tato semestrální práce z se zaobírá tvorbou XML dokumentu, který popisuje soubor kam ukládá fiktivní textový editor své nastavení. Součástí práce je vytvoření XSD schéma, XSL, XSL transformace do HTML a dokumentace. Vše je tvořeno pro fiktivní textový editor.
+					</p>
+				</section>      
+				
+				<section id="metodika">
+					<h2>Metodika</h2>
+					<p>Všechny dokumenty byly vytvořeny v programu <i>Sublime Text</i>.</p>
+					<p>
+						Nejprve bylo vytvořeno schéma XSD se základnímy elementy, podelementy a atributy. Dále bylo třeba vytvořit restrikce na datové typy a provést celkovou korekci a úpravu struktury. Poté došlo k vytváření samotného XML dokumentu, který korespondoval s vytvořeným XSD. Tímto způsobem se lépe vytvářelo XML a dokument se lépe plnil smyšlenými daty.
+					</p>
+					<p>
+						Po vytvoření XML a XSL bylo třeba zajistit jejich validitu. Validita těchto dvou dokumentů byla zkontrolována pomocí <a href="http://www.utilities-online.info/xsdvalidation/">webového validátoru </a>. Zároveň bylo zkontrolováno, že XML dokument odpovídá XSD schématu.
+					</p>
+					<p>
+						XSL transformace do HTML byla psána ručně. Data jsou strukturována do HTML tabulek podle kategorií vyplývajících z designu XSD dokumentu. Obsahují stručně a přehledně zapsaná data obsažená v XML dokumentu. Při testování jsem zjistil, že prohlížeč Opera neumí s transformacemi pracovat, zobrazí pouze plain text. Pouze prohlížeč Internet Explorer zobrazil HTML transformaci správně. Transformace do HTML obsahuje všechna data z XML souboru.
+					</p>
+					<p>
+						Celý projekt byl v průběhu jeho tvorby postupně nahráván (a verzován) na platformě <a href="https://github.com/xpavf001/TextovyEditor">GitHub</a>.
+					</p>
+				</section>
+				
+				<section id="elementy_atributy">
+					<h2>Popis elementů a atributů</h2>
+
+					<table border="2">
+						<tr bgcolor="#9acd32">
+							<th>Adresa elementu/atributu</th>
+							<th>Popis</th>
+						</tr>
+						<tr>
+							<td>obecne_nastavení/jazykova_lokalizace</td>
+							<td>Výběr jazykové lokalizace programu</td>
+						</tr>
+						<tr>
+							<td>obecne_nastavení/motiv</td>
+							<td>Výběr vzhledu programu</td>
+						</tr>
+						<tr>
+							<td>obecne_nastavení/datum</td>
+							<td>Manuální zadání aktuálního data</td>
+						</tr>
+						<tr>
+							<td>obecne_nastavení/znakova_sada</td>
+							<td>Výběr znakové sady pro ukládání souborů</td>
+						</tr>
+						<tr>
+							<td>obecne_nastavení/autopredikce</td>
+							<td>Zapnutí či vypnutí dokončování slov na základě paměti a slovníku</td>
+						</tr>
+						<tr>
+							<td>obecne_nastavení/uloziste</td>
+							<td>Volba úložiště pro ukládání souborů</td>
+						</tr>
+						<tr>
+							<td>nastaveni_formatu/format</td>
+							<td>Volba formátu dokumentu</td>
+						</tr>
+						<tr>
+							<td>nastaveni_formatu/orientace</td>
+							<td>Orientace dokumentu</td>
+						</tr>
+						<tr>
+							<td>nastaveni_pisma/typ_fontu</td>
+							<td>Typ fontu písma</td>
+						</tr>
+						<tr>
+							<td>nastaveni_pisma/velikost_fontu/td>
+							<td>Nastavení velikosti písma</td>
+						</tr>
+						<tr>
+							<td>nastaveni_pisma/barva textu</td>
+							<td>Volba barvy textu</td>
+						</tr>
+						<tr>
+							<td>nastaveni_pisma/barva_pozadi_textu</td>
+							<td>Volba barvy pozadí textu</td>
+						</tr>
+						<tr>
+							<td>nastaveni_pisma/rez_fontu</td>
+							<td>Volba řezu fontu/td>
+						</tr>
+						<tr>
+							<td>nastaveni_pisma/podtrzeni_textu</td>
+							<td>Volba podtržení textu</td>
+						</tr>
+						<tr>
+							<td>nastaveni_pisma/zarovnani_textu</td>
+							<td>Volba zarovnání textu</td>
+						</tr>
+						<tr>
+							<td>nastaveni_pisma/odsazeni_textu</td>
+							<td>Volba odsazení textu</td>
+						</tr>
+						<tr>
+							<td>nastaveni_pisma/radkovani</td>
+							<td>Volba řádkování textu</td>
+						</tr>
+						<tr>
+							<td>styl/@jmeno_stylu</td>
+							<td>Název zvoleného stylu pro formátování textu</td>
+						</tr>
+						<tr>
+							<td>priloha/tabulka/@jmeno_tabulky</td>
+							<td>Název tabulky</td>
+						</tr>
+						<tr>
+							<td>priloha/tabulka/@radek</td>
+							<td>Počet řádků tabulky</td>
+						</tr>
+						<tr>
+							<td>priloha/tabulka/@sloupec</td>
+							<td>Počet sloupců tabulky</td>
+						</tr>
+						<tr>
+							<td>priloha/obrazek/@jmeno_obrazek</td>
+							<td>Název obrázku</td>
+						</tr>
+						<tr>
+							<td>priloha/obrazek/cesta</td>
+							<td>URL cesta ke zdroji obrázku</td>
+						</tr>
+						<tr>
+							<td>ohraniceni/zleva</td>
+							<td>Hodnota vzdálenosti ohraničení zleva</td>
+						</tr>
+						<tr>
+							<td>ohraniceni/zprava</td>
+							<td>Hodnota vzdálenosti ohraničení zprava</td>
+						</tr>
+						<tr>
+							<td>ohraniceni/shora</td>
+							<td>Hodnota vzdálenosti ohraničení shora</td>
+						</tr>
+						<tr>
+							<td>ohraniceni/zdola</td>
+							<td>Hodnota vzdálenosti ohraničení zdola</td>
+						</tr>
+						<tr>
+							<td>vlastni_ohraniceni/@jmeno_ohraniceni</td>
+							<td>Název vlastnoručně nakonfigurovaného ohraničení</td>
+						</tr>
+						<tr>
+							<td>cislovani_stranek/stav</td>
+							<td>Zapnutí či vypnutí číslování stránek</td>
+						</tr>
+						<tr>
+							<td>cislovani_stranek/pozice</td>
+							<td>Pozice čísel, která udávají číslo stránky</td>
+						</tr>
+						
+					</table>
+				</section>
+				
+				<section id="transformace">
+					<h2>Popis transformace</h2>
+
+					<h3>HTML</h3>
+					<p>
+						Data jsou transformována do HTML dokumentu. Jsou strukturována tak, jak by typicky byly strukturovány možnosti nastavení textového editoru - na Základní nastavení, Formát dokumentu, Práci s písmem, Stylizaci, Ohraničení, a Číslování stránek. Jednotlivé elementy a atributy jsou zapsány do tabulek. Všechny elementy datového typu "boolean" jsou zabaleny v podmínkách, přes které se přepisují z 1/0 na Zapnuto/Vypnuto. Transformace od HTML obsahuje všechna data z XML souboru.
+					</p>
+				</section>
+				
+				<section id="shrnuti">
+					<h2>Závěr</h2>
+					<p>
+						Jazyk XML je používán pro strukturované ukládání dat nebo pro komunikaci mezi programy. Jeho výhodou je dobrá čitelnost, široké možnosti filtrování a omezování dat a datových typů. Práce s ním je také snadná, protože k jeho editaci stačí pouze obyčejný textový editor.
+					</p>
+				</section>
+			</article>
+		</main>
+		
+		<footer id="zapati">
+			<hr>
+			<table>
+				<tr>
+					<td>Autor:</td>
+					<td>Filip Pavelka</td>
+				</tr>
+				<tr>
+					<td>Cvičení:</td>
+					<td>Čtvrtek 15:45 - Lichý týden</td>
+				</tr>
+			</table>
+		</footer>
+	</body>
+</html>

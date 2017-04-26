@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+  <?xml-stylesheet type="text/xsl" href="Textovy_editor_XSD"?>
+  <!-- Odkaz na github: https://github.com/xpavf001/TextovyEditor-->
+<konfigurace_textoveho_editoru xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Textovy_editor_XSD.xsd">
+
+<!--obecné nastavení-->
+<obecne_nastaveni>
+	<jazykova_lokalizace>cs-CZ</jazykova_lokalizace>
+	<motiv>svetly_motiv</motiv>
+	<datum>2017-20-04</datum>
+	<znakova_sada>utf-8</znakova_sada>	
+	<autopredikce>0</autopredikce>
+  <uloziste>C:\Users\HomePC\Documents</uloziste>
+</obecne_nastaveni>
+<!--obecné nastavení-->
+
+<!--nastavení formátu-->
+<nastaveni_formatu>
+  <format>A4</format>
+  <orientace>portrait</orientace>
+</nastaveni_formatu>
+<!--nastavení formátu-->
+
+<!--nastavení písma-->
+<nastaveni_pisma>
+  <typ_fontu>Arial</typ_fontu>
+  <velikost_fontu>12</velikost_fontu>
+  <barva_textu>Black</barva_textu>
+  <barva_pozadi_textu>White</barva_pozadi_textu>
+  <rez_fontu>Normal</rez_fontu>
+  <podtrzeni_textu>None</podtrzeni_textu>
+  <zarovnani_textu>Left</zarovnani_textu>
+  <odsazeni_textu>2</odsazeni_textu>
+  <radkovani>1,25</radkovani>
+</nastaveni_pisma>
+<!--nastavení písma-->
+
+<!--volba stylu-->
+<styl jmeno_stylu="Nadpis1">
+  <typ_fontu>Times New Roman</typ_fontu>
+  <velikost_fontu>16</velikost_fontu>
+  <barva_textu>Black</barva_textu>
+  <barva_pozadi_textu>White</barva_pozadi_textu>
+  <rez_fontu>Bold</rez_fontu>
+  <podtrzeni_textu>Lower</podtrzeni_textu>
+  <zarovnani_textu>Left</zarovnani_textu>
+  <odsazeni_textu>1,5</odsazeni_textu>
+  <radkovani>1,25</radkovani>
+</styl>
+
+<styl jmeno_stylu="Nadpis2">
+  <typ_fontu>Times New Roman</typ_fontu>
+  <velikost_fontu>14</velikost_fontu>
+  <barva_textu>Black</barva_textu>
+  <barva_pozadi_textu>White</barva_pozadi_textu>
+  <rez_fontu>Bold</rez_fontu>
+  <podtrzeni_textu>None</podtrzeni_textu>
+  <zarovnani_textu>Left</zarovnani_textu>
+  <odsazeni_textu>1,5</odsazeni_textu>
+  <radkovani>1,25</radkovani>
+</styl>
+
+<styl jmeno_stylu="Nadpis3">
+  <typ_fontu>Times New Roman</typ_fontu>
+  <velikost_fontu>12</velikost_fontu>
+  <barva_textu>Black</barva_textu>
+  <barva_pozadi_textu>White</barva_pozadi_textu>
+  <rez_fontu>Italic</rez_fontu>
+  <podtrzeni_textu>None</podtrzeni_textu>
+  <zarovnani_textu>Left</zarovnani_textu>
+  <odsazeni_textu>1,5</odsazeni_textu>
+  <radkovani>1,25</radkovani>
+</styl>
+
+<styl jmeno_stylu="Odstavec">
+  <typ_fontu>Times New Roman</typ_fontu>
+  <velikost_fontu>12</velikost_fontu>
+  <barva_textu>Black</barva_textu>
+  <barva_pozadi_textu>White</barva_pozadi_textu>
+  <rez_fontu>Normal</rez_fontu>
+  <podtrzeni_textu>None</podtrzeni_textu>
+  <zarovnani_textu>Bloc</zarovnani_textu>
+  <odsazeni_textu>2,5</odsazeni_textu>
+  <radkovani>1,25</radkovani>
+</styl>
+
+<styl jmeno_stylu="Citace">
+  <typ_fontu>Times New Roman</typ_fontu>
+  <velikost_fontu>12</velikost_fontu>
+  <barva_textu>Black</barva_textu>
+  <barva_pozadi_textu>White</barva_pozadi_textu>
+  <rez_fontu>Italic</rez_fontu>
+  <podtrzeni_textu>None</podtrzeni_textu>
+  <zarovnani_textu>Bloc</zarovnani_textu>
+  <odsazeni_textu>2,5</odsazeni_textu>
+  <radkovani>1,25</radkovani>
+</styl>
+<!--volba stylu-->
+
+<!--nastavení příloh-->
+<priloha>
+  <tabulka jmeno_tabulky="tabulka1" radek="7" sloupec="4">
+  </tabulka>
+</priloha>
+
+<priloha>
+  <tabulka jmeno_tabulky="tabulka2" radek="10" sloupec="5">
+  </tabulka>
+</priloha>
+
+<priloha>
+  <tabulka jmeno_tabulky="tabulka3" radek="6" sloupec="3">
+  </tabulka>
+</priloha>
+
+<priloha>
+  <obrazek jmeno_obrazku="obrazek1">
+    <cesta>C:\Users\HomePC\Pictures\picture1.jpg</cesta>
+  </obrazek>
+</priloha>
+
+<priloha>
+  <obrazek jmeno_obrazku="obrazek2">
+    <cesta>C:\Users\HomePC\Pictures\picture2.jpg</cesta>
+  </obrazek>
+</priloha>
+<!--nastavení příloh--> 
+
+<!--nastavení ohraničení-->
+<ohraniceni>       
+  <zleva>2</zleva>
+  <zprava>2</zprava>
+  <shora>2</shora>
+  <zdola>2</zdola>
+</ohraniceni>
+<!--nastavení ohraničení-->
+
+<!--vlastní ohraničení-->
+<vlastni_ohraniceni jmeno_ohraniceni="vlastni_ohraniceni1">       
+  <zleva>2</zleva>
+  <zprava>2</zprava>
+  <shora>2</shora>
+  <zdola>2</zdola>
+</vlastni_ohraniceni>
+
+<vlastni_ohraniceni jmeno_ohraniceni="vlastni_ohraniceni2">       
+  <zleva>2,5</zleva>
+  <zprava>2,5</zprava>
+  <shora>2,5</shora>
+  <zdola>2,5</zdola>
+</vlastni_ohraniceni>
+<!--vlastní ohraničení-->
+        
+<!--číslování stránek-->
+<cislovani_stranek>
+  <stav>1</stav>
+  <pozice>Center</pozice>
+</cislovani_stranek>
+<!--číslování stránek-->
+
+</konfigurace_textoveho_editoru>
